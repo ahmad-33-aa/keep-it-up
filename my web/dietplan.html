@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape It Up! - Diet Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                            url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff5500;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .meal-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .meal-tab {
+            background-color: rgba(255, 85, 0, 0.3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            border: 2px solid #ff5500;
+        }
+
+        .meal-tab:hover, .meal-tab.active {
+            background-color: #ff5500;
+            transform: translateY(-3px);
+        }
+
+        .meal-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ff5500;
+            display: none;
+        }
+
+        .meal-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .meal-section h2 {
+            color: #ff5500;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .meal-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .meal-item h3 {
+            color: #ff9933;
+            margin-bottom: 8px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #ff5500;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #ff3300;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .meal-tab { padding: 12px 20px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NUTRITION PLAN</h1>
+        
+        <div class="meal-categories">
+            <div class="meal-tab active" onclick="showMealSection('breakfast')">Breakfast</div>
+            <div class="meal-tab" onclick="showMealSection('lunch')">Lunch</div>
+            <div class="meal-tab" onclick="showMealSection('dinner')">Dinner</div>
+            <div class="meal-tab" onclick="showMealSection('snacks')">Snacks</div>
+        </div>
+        
+        <div id="breakfast" class="meal-section active">
+            <h2>BREAKFAST OPTIONS</h2>
+            <div class="meal-item">
+                <h3>Option 1: Ful Medames (فول مدمس)</h3>
+                <p><strong>Ingredients:</strong> ½ cup cooked fava beans (100g), 1 tsp olive oil (5g), ½ lemon juice, garlic, cumin, 1 small tomato (50g), parsley.</p>
+                <p><strong>Macros:</strong> Calories: 180 | Protein: 9g | Fat: 4g | Carbs: 25g | Fiber: 8g</p>
+                <p><strong>Why?</strong> High in fiber and plant-based protein, keeps you full for hours. Rich in iron and antioxidants.</p>
+            </div>
+            <div class="meal-item">
+                <h3>Option 2: Oatmeal with Milk, Peanut Butter & Banana</h3>
+                <p><strong>Ingredients:</strong> 100g oats (dry weight), 100ml whole milk, 20g peanut butter, 1 medium banana (~120g).</p>
+                <p><strong>Macros:</strong> Calories: 580 | Protein: 20g | Fat: 20g | Carbs: 85g | Fiber: 10g</p>
+                <p><strong>Why?</strong> High in complex carbs (slow energy release). Healthy fats from peanut butter. Good fiber content for digestion.</p>
+            </div>
+            <div class="meal-item">
+                <h3>Option 3: Scrambled Eggs with Olive Oil, Whole Wheat Bread & Veggies</h3>
+                <p><strong>Ingredients:</strong> 4 whole eggs, 1 tbsp (15ml) olive oil, 1 slice whole wheat bread (~30g), veggies (e.g., spinach, tomatoes, onions – ~50g).</p>
+                <p><strong>Macros:</strong> Calories: 520 | Protein: 28g | Fat: 35g | Carbs: 20g | Fiber: 4g</p>
+                <p><strong>Why?</strong> High in protein (great for muscle maintenance). Healthy fats from eggs and olive oil. Low-carb if bread is limited.</p>
+            </div>
+            <div class="meal-item">
+                <h3>Option 4: Labneh with Veggies & Whole Wheat Bread</h3>
+                <p><strong>Ingredients:</strong> 50g labneh (strained yogurt), 1 slice whole wheat bread (~30g), veggies (cucumber, tomatoes, olives – ~50g).</p>
+                <p><strong>Macros:</strong> Calories: 250 | Protein: 12g | Fat: 10g | Carbs: 25g | Fiber: 4g</p>
+                <p><strong>Why?</strong> Probiotic-rich labneh supports gut health. Balanced macros for a light meal.</p>
+            </div>
+        </div>
+        
+        <div id="lunch" class="meal-section">
+            <h2>LUNCH OPTIONS</h2>
+            <div class="meal-item">
+                <h3>Meal 1: Chicken with Rice and Salad</h3>
+                <p><strong>Ingredients:</strong> 200g Chicken + 300g Rice + Salad Bowl</p>
+                <p><strong>Macros:</strong> Calories: 750 | Protein: 72g | Fat: 8g | Carbs: 92g | Fiber: 3g</p>
+                <p><strong>Details:</strong>
+                    <ul>
+                        <li>Chicken (200g): 330 kcal, 62g protein, 7g fat</li>
+                        <li>White Rice (300g): 390 kcal, 8g protein, 1g fat, 86g carbs</li>
+                        <li>Salad: 30 kcal, 2g protein, 6g carbs, 2g fiber</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="meal-item">
+                <h3>Meal 2: Baked Kofta with Potato and Vegetables</h3>
+                <p><strong>Ingredients:</strong> 150g Baked Kofta + 300g Baked Potato + Onion & Tomato</p>
+                <p><strong>Macros:</strong> Calories: 635 | Protein: 32g | Fat: 30g | Carbs: 62g | Fiber: 7g</p>
+                <p><strong>Details:</strong>
+                    <ul>
+                        <li>Kofta (150g): 375 kcal, 25g protein, 30g fat</li>
+                        <li>Potato (300g): 240 kcal, 6g protein, 55g carbs, 6g fiber</li>
+                        <li>Onion & Tomato (50g): 20 kcal, 1g protein, 5g carbs</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="meal-item">
+                <h3>Meal 3: Fajita Wrap</h3>
+                <p><strong>Ingredients:</strong> Fajita Wrap (100g Fajita + Veggies + 20g Mayo & Ketchup)</p>
+                <p><strong>Macros:</strong> Calories: 520 | Protein: 30g | Fat: 28g | Carbs: 34g | Fiber: 3g</p>
+                <p><strong>Details:</strong>
+                    <ul>
+                        <li>Fajita Meat (100g): 200 kcal, 25g protein, 10g fat</li>
+                        <li>Wrap: 150 kcal, 4g protein, 3g fat, 25g carbs</li>
+                        <li>Veggies: 15 kcal, 1g protein, 3g carbs</li>
+                        <li>Mayo (20g): 140 kcal, 15g fat</li>
+                        <li>Ketchup (10g): 15 kcal, 4g carbs</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="meal-item">
+                <h3>Meal 4: Chicken Thighs with Potato and Vegetables</h3>
+                <p><strong>Ingredients:</strong> Chicken Thighs + Potato + Veggies (Oven-Baked)</p>
+                <p><strong>Macros:</strong> Calories: 520 | Protein: 30g | Fat: 25g | Carbs: 44g | Fiber: 6g</p>
+                <p><strong>Details:</strong>
+                    <ul>
+                        <li>Chicken Thigh (150g): 330 kcal, 25g protein, 25g fat</li>
+                        <li>Potato (200g): 160 kcal, 4g protein, 37g carbs, 4g fiber</li>
+                        <li>Veggies (100g): 30 kcal, 1g protein, 7g carbs, 2g fiber</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        
+        <div id="dinner" class="meal-section">
+            <h2>DINNER OPTIONS</h2>
+            <div class="meal-item">
+                <h3>Option 1: Tuna Salad</h3>
+                <p><strong>Ingredients:</strong> 1 can tuna in water (120g drained), 30g corn, 50g lettuce, 1 small tomato (100g), 20g onion, 1 tbsp lemon juice.</p>
+                <p><strong>Macros:</strong> Calories: 230 | Protein: 30g | Carbs: 20g | Fat: 2g | Fiber: 4g</p>
+            </div>
+            <div class="meal-item">
+                <h3>Option 2: Boiled Eggs with Labneh & Whole Wheat Bread</h3>
+                <p><strong>Ingredients:</strong> 2 boiled eggs (100g), 20g labneh, 1 slice whole wheat bread (30g), 50g cucumber/tomato.</p>
+                <p><strong>Macros:</strong> Calories: 300 | Protein: 20g | Carbs: 25g | Fat: 14g | Fiber: 4g</p>
+            </div>
+            <div class="meal-item">
+                <h3>Option 3: Chicken with Rice & Veggies</h3>
+                <p><strong>Ingredients:</strong> 100g chicken breast (cooked), 200g white rice (cooked), 50g mixed veggies.</p>
+                <p><strong>Macros:</strong> Calories: 450 | Protein: 35g | Carbs: 70g | Fat: 3g | Fiber: 2g</p>
+            </div>
+            <div class="meal-item">
+                <h3>Option 4: Ground Beef with Baked Potato & Veggies</h3>
+                <p><strong>Ingredients:</strong> 100g 90% lean ground beef (cooked), 100g baked potato, 50g steamed veggies.</p>
+                <p><strong>Macros:</strong> Calories: 350 | Protein: 25g | Carbs: 30g | Fat: 15g | Fiber: 4g</p>
+            </div>
+        </div>
+        
+        <div id="snacks" class="meal-section">
+            <h2>HEALTHY SNACKS</h2>
+            <div class="meal-item">
+                <h3>Option 1: Protein Shake</h3>
+                <p>Whey protein with almond milk and peanut butter</p>
+                <p>Calories: 280 | Protein: 30g | Carbs: 15g | Fat: 12g</p>
+            </div>
+            <div class="meal-item">
+                <h3>Option 2: Nut Mix</h3>
+                <p>Mixed nuts with dried cranberries</p>
+                <p>Calories: 200 | Protein: 8g | Carbs: 15g | Fat: 14g</p>
+            </div>
+            <div class="meal-item">
+                <h3>Option 3: Veggies & Hummus</h3>
+                <p>Carrot and celery sticks with hummus dip</p>
+                <p>Calories: 180 | Protein: 6g | Carbs: 20g | Fat: 9g</p>
+            </div>
+        </div>
+        
+        <button class="back-button" onclick="window.location.href='gym2.html'">Back to Home</button>
+    </div>
+
+    <script>
+        function showMealSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.meal-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Deactivate all tabs
+            document.querySelectorAll('.meal-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Activate clicked tab
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

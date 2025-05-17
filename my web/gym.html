@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keep it up- Shape It Up!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581009137042-c552e485697a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: #ff5500;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .quote {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff5500;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-bottom: 3rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3300;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            .quote {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SHAPE IT UP!</h1>
+        <p class="tagline">GET FIT DON'T QUIT</p>
+        
+        <p class="quote">
+            Today I will do what others won't, so tomorrow I can accomplish what others can't. 
+            We are what we repeatedly do. Excellence then is not an act but a habit.
+        </p>
+        
+        <a href="gym2.html" class="cta-button">JOIN US NOW</a>
+    </div>
+</body>
+</html>
